@@ -7,7 +7,7 @@ CLANGD_TARGET := .clangd
 
 SRC_DIR = ./
 
-SRC_FILES = main.cpp Dog.cpp Cat.cpp Animal.cpp
+SRC_FILES = main.cpp Dog.cpp Cat.cpp Animal.cpp WrongCat.cpp WrongAnimal.cpp
 
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ = $(SRC:.cpp=.o)

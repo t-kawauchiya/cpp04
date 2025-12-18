@@ -6,17 +6,20 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 13:15:27 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/18 17:06:17 by takawauc         ###   ########.fr       */
+/*   Updated: 2025/12/18 17:18:06 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 #include <iostream>
 
 const std::string separator = "----------------------------------\n";
+int wrong();
 
 int main()
 {
@@ -55,5 +58,24 @@ int main()
   delete i;
   delete j;
   delete meta;
+  wrong();
+  return 0;
+}
+
+int wrong()
+{
+  std::cout << separator;
+  std::cout << "[wrong]\n";
+  const WrongAnimal* meta = new WrongAnimal();
+  const WrongAnimal* i = new WrongCat();
+  std::cout << *meta;
+  std::cout << *i;
+  i->makeSound();
+  meta->makeSound();
+
+  delete i;
+  delete meta;
+  std::cout << separator;
+
   return 0;
 }
