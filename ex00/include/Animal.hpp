@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:40:30 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/18 16:40:47 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/04 21:10:31 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@ class Animal
 public:
   Animal(void);
   Animal(std::string type);
-  virtual ~Animal(void);
   Animal(const Animal& other);
+  virtual ~Animal(void);
   Animal& operator=(const Animal& other);
 
   std::string getType() const;
   void setType(const std::string type);
+
   virtual void makeSound(void) const;
 
 protected:

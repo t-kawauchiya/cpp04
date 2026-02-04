@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:46:39 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/18 17:13:36 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/04 21:15:16 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,16 @@ WrongCat::WrongCat(const WrongCat& other)
   *this = other;
 }
 
+WrongCat::~WrongCat(void)
+{
+  std::cout << "WrongCat destructor called.\n";
+}
+
 WrongCat& WrongCat::operator=(const WrongCat& src)
 {
   std::cout << "WrongCat copy assignment constructor called.\n";
   this->_type = src._type;
   return (*this);
-}
-
-WrongCat::~WrongCat(void)
-{
-  std::cout << "WrongCat destructor called.\n";
 }
 
 void WrongCat::makeSound(void) const

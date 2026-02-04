@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 13:15:27 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/18 17:18:06 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/04 21:27:55 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,51 +20,58 @@
 
 const std::string separator = "----------------------------------\n";
 int wrong();
+int right();
 
 int main()
 {
-  std::cout << separator;
-  std::cout << "[constructor]\n";
-  const Animal* meta = new Animal();
-  const Animal* i = new Dog();
-  const Animal* j = new Cat();
-  Animal k;
-  k.setType("animal_k");
-  Animal l(k);
-  Dog m;
-  m.setType("dog_m");
-  Dog n(m);
-  Cat o;
-  o.setType("cat_o");
-  Cat p(o);
-
-  std::cout << *meta;
-  std::cout << *i;
-  std::cout << *j;
-  std::cout << separator;
-  std::cout << "[polymophism]\n";
-  i->makeSound();
-  j->makeSound();
-  meta->makeSound();
-  std::cout << separator;
-  std::cout << "[setter/getter/copy constructor]\n";
-
-  std::cout << k << l;
-  std::cout << m << n;
-  std::cout << o << p;
-  std::cout << separator;
-  std::cout << "[destructor]\n";
-
-  delete i;
-  delete j;
-  delete meta;
+  right();
   wrong();
+  return 0;
+}
+
+int right()
+{
+  {
+    std::cout << "[right]\n";
+    const Animal* meta = new Animal();
+    const Animal* i = new Cat();
+    const Animal* j = new Dog();
+    std::cout << *meta;
+    std::cout << *i;
+    std::cout << *j;
+    meta->makeSound();
+    i->makeSound();
+    j->makeSound();
+
+    delete meta;
+    delete i;
+    delete j;
+    std::cout << separator;
+  }
+  {
+    std::cout << "[setter/getter/copy constructor]\n";
+    Animal animal1;
+    animal1.setType("animal1");
+    Animal animal2(animal1);
+    Dog dog1;
+    dog1.setType("dog1");
+    Dog dog2(dog1);
+    Cat cat1;
+    cat1.setType("cat1");
+    Cat cat2(cat1);
+
+    std::cout << animal1 << animal2;
+    std::cout << dog1 << dog2;
+    std::cout << cat1 << cat2;
+    std::cout << separator;
+    std::cout << "[destructor]\n";
+  }
+  std::cout << separator;
   return 0;
 }
 
 int wrong()
 {
-  std::cout << separator;
   std::cout << "[wrong]\n";
   const WrongAnimal* meta = new WrongAnimal();
   const WrongAnimal* i = new WrongCat();

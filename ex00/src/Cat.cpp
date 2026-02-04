@@ -1,55 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:46:39 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/18 16:25:51 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/04 21:14:21 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
 #include <iostream>
 
-const std::string Dog::kDefaultType = "Dog";
+const std::string Cat::kDefaultType = "Cat";
 
-Dog::Dog() : Animal(kDefaultType)
+Cat::Cat() : Animal(kDefaultType)
 {
-  std::cout << "Dog default constructor called.\n";
+  std::cout << "Cat default constructor called.\n";
 }
 
-Dog::Dog(std::string type) : Animal(type)
+Cat::Cat(std::string type) : Animal(type)
 {
-  std::cout << "Dog constructor called.\n";
+  std::cout << "Cat constructor called.\n";
 }
 
-Dog::Dog(const Dog& other)
+Cat::Cat(const Cat& other)
 {
-  std::cout << "Dog copy constructor called.\n";
+  std::cout << "Cat copy constructor called.\n";
   *this = other;
 }
 
-Dog& Dog::operator=(const Dog& src)
+Cat::~Cat(void)
 {
-  std::cout << "Dog copy assignment constructor called.\n";
+  std::cout << "Cat destructor called.\n";
+}
+
+Cat& Cat::operator=(const Cat& src)
+{
+  std::cout << "Cat copy assignment constructor called.\n";
   this->_type = src._type;
   return (*this);
 }
 
-Dog::~Dog(void)
+void Cat::makeSound(void) const
 {
-  std::cout << "Dog destructor called.\n";
+  std::cout << "miaou miaou\n";
 }
 
-void Dog::makeSound(void) const
-{
-  std::cout << "Wouaf wouaf\n";
-}
-
-std::ostream& operator<<(std::ostream& os, const Dog& ct)
+std::ostream& operator<<(std::ostream& os, const Cat& ct)
 {
   os << "type : " << ct.getType() << "\n";
   return os;

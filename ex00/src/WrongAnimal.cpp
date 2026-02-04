@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:46:39 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/18 17:10:44 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/04 21:14:53 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,16 @@ WrongAnimal::WrongAnimal(const WrongAnimal& other)
   *this = other;
 }
 
+WrongAnimal::~WrongAnimal(void)
+{
+  std::cout << "WrongAnimal destructor called.\n";
+}
+
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& src)
 {
   std::cout << "WrongAnimal copy assignment constructor called.\n";
   this->_type = src._type;
   return (*this);
-}
-
-WrongAnimal::~WrongAnimal(void)
-{
-  std::cout << "WrongAnimal destructor called.\n";
 }
 
 std::string WrongAnimal::getType() const
