@@ -6,18 +6,18 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:40:30 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/19 14:20:21 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/04 22:16:18 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _DOG_H_
 #define _DOG_H_
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 #include <string>
 
-class Dog : public Animal
+class Dog : public AAnimal
 {
 public:
   Dog(void);

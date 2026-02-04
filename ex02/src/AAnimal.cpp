@@ -1,70 +1,70 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:46:39 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/19 14:22:25 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/04 22:17:33 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 #include <iostream>
 
-const std::string Animal::kDefaultType = "Animal";
+const std::string AAnimal::kDefaultType = "AAnimal";
 
-Animal::Animal() : _type(kDefaultType)
+AAnimal::AAnimal() : _type(kDefaultType)
 {
-  std::cout << "Animal default constructor called.\n";
+  std::cout << "AAnimal default constructor called.\n";
 }
 
-Animal::Animal(std::string type) : _type(type)
+AAnimal::AAnimal(std::string type) : _type(type)
 {
-  std::cout << "Animal parameterized constructor called.\n";
+  std::cout << "AAnimal parameterized constructor called.\n";
 }
 
-Animal::Animal(const Animal& other)
+AAnimal::AAnimal(const AAnimal& other)
 {
-  std::cout << "Animal copy constructor called.\n";
+  std::cout << "AAnimal copy constructor called.\n";
   *this = other;
 }
 
-Animal& Animal::operator=(const Animal& src)
+AAnimal& AAnimal::operator=(const AAnimal& src)
 {
-  std::cout << "Animal copy assignment constructor called.\n";
+  std::cout << "AAnimal copy assignment constructor called.\n";
   this->_type = src._type;
   return (*this);
 }
 
-Animal::~Animal(void)
+AAnimal::~AAnimal(void)
 {
-  std::cout << "Animal destructor called.\n";
+  std::cout << "AAnimal destructor called.\n";
 }
 
-std::string Animal::getType() const
+std::string AAnimal::getType() const
 {
   return this->_type;
 }
 
-void Animal::setType(const std::string type)
+void AAnimal::setType(const std::string type)
 {
   this->_type = type;
 }
 
-const Brain* Animal::getBrain(void) const
+Brain* AAnimal::getBrain(void) const
 {
   return this->_brain;
 }
 
-void Animal::setBrain(const Brain& brain)
+void AAnimal::setBrain(const Brain& brain)
 {
   *this->_brain = brain;
 }
 
-std::ostream& operator<<(std::ostream& os, const Animal& ct)
+std::ostream& operator<<(std::ostream& os, const AAnimal& ct)
 {
   os << "type : " << ct.getType() << "\n";
   return os;

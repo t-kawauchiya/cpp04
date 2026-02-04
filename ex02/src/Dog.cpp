@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:46:39 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/19 14:20:34 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/04 22:18:08 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 
 const std::string Dog::kDefaultType = "Dog";
 
-Dog::Dog() : Animal(kDefaultType)
+Dog::Dog() : AAnimal(kDefaultType)
 {
   std::cout << "Dog default constructor called.\n";
   this->_brain = new Brain();
 }
 
-Dog::Dog(std::string type) : Animal(type)
+Dog::Dog(std::string type) : AAnimal(type)
 {
   std::cout << "Dog constructor called.\n";
   this->_brain = new Brain();

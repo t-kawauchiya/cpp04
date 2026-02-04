@@ -6,11 +6,11 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 13:15:27 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/19 13:46:51 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/04 22:18:37 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 
@@ -36,13 +36,13 @@ int test_delete(void)
   std::cout << "[test_delete]\n";
 
   std::cout << "(leak check when Animal destructed)\n";
-  const Animal* dog = new Dog();
-  const Animal* cat = new Cat();
+  const AAnimal* dog = new Dog();
+  const AAnimal* cat = new Cat();
   delete cat;
   delete dog;
 
   std::cout << "\n(create animals)\n";
-  Animal* animals[4] = {new Dog(), new Dog(), new Cat(), new Cat()};
+  AAnimal* animals[4] = {new Dog(), new Dog(), new Cat(), new Cat()};
 
   std::cout << "\n(delete animals)\n";
   for (int i = 0; i < 4; i++)

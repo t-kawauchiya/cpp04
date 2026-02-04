@@ -8,7 +8,7 @@ SANFLAGS = -g -fsanitize=address -fsanitize=leak -fno-omit-frame-pointer
 
 SRC_DIR = src/
 OBJ_DIR = obj/
-SRC_FILES = main.cpp Brain.cpp Dog.cpp Cat.cpp Animal.cpp
+SRC_FILES = main.cpp Brain.cpp Dog.cpp Cat.cpp AAnimal.cpp
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ = $(addprefix $(OBJ_DIR), $(SRC_FILES:.cpp=.o))
 

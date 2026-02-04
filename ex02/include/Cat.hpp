@@ -6,18 +6,18 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:40:30 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/19 14:25:11 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/04 22:16:01 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _CAT_H_
 #define _CAT_H_
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 #include <string>
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
 public:
   Cat(void);
