@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:46:39 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/19 13:31:30 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/04 22:06:41 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ Dog::~Dog(void)
   delete this->_brain;
 }
 
-const Brain* Dog::getBrain(void) const
+Brain* Dog::getBrain(void) const
 {
   return this->_brain;
 }

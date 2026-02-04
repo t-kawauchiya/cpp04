@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 13:15:27 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/19 13:46:51 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/04 22:07:54 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int main()
   test_delete();
   std::cout << separator;
   test_copy();
-
   return 0;
 }
 
@@ -35,9 +34,10 @@ int test_delete(void)
 {
   std::cout << "[test_delete]\n";
 
-  std::cout << "(leak check when Animal destructed)\n";
+  std::cout << "(create a animal)\n";
   const Animal* dog = new Dog();
   const Animal* cat = new Cat();
+  std::cout << "\n(delete a animal)\n";
   delete cat;
   delete dog;
 
@@ -59,10 +59,8 @@ int test_copy(void)
   Brain brain;
 
   std::cout << "\ndog1.getBrain()->getIdea(0): " << dog1.getBrain()->getIdea(0) << std::endl;
-  std::cout << "(update dog1._brain._idea[0])\n";
-  brain = *dog1.getBrain();
-  brain.setIdea("sampo", 0);
-  dog1.setBrain(brain);
+  std::cout << "( update dog1._brain._idea[0] )\n";
+  dog1.getBrain()->setIdea("sampo", 0);
   std::cout << "dog1.getBrain()->getIdea(0): " << dog1.getBrain()->getIdea(0) << std::endl;
   std::cout << "dog2.getBrain()->getIdea(0): " << dog2.getBrain()->getIdea(0) << std::endl;
   std::cout << std::endl;

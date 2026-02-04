@@ -4,3 +4,5 @@ en.subject.pdf
 ex00/polymorphism
 ex01/i_dont_want_to_set_the_world_on_fire
 ex02/abstruct_class
+.cache
+compile_commands.json
