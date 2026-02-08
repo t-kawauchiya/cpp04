@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 13:15:27 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/04 21:27:55 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/08 21:35:27 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,14 @@ int right()
     const Animal* meta = new Animal();
     const Animal* i = new Cat();
     const Animal* j = new Dog();
-    std::cout << *meta;
-    std::cout << *i;
-    std::cout << *j;
+    std::cout << "meta : " << *meta;
+    std::cout << "meta->makeSound()\n";
     meta->makeSound();
+    std::cout << "i : " << *i;
+    std::cout << "i->makeSound()\n";
     i->makeSound();
+    std::cout << "j : " << *j;
+    std::cout << "j->makeSound()\n";
     j->makeSound();
 
     delete meta;
@@ -75,10 +78,12 @@ int wrong()
   std::cout << "[wrong]\n";
   const WrongAnimal* meta = new WrongAnimal();
   const WrongAnimal* i = new WrongCat();
-  std::cout << *meta;
-  std::cout << *i;
-  i->makeSound();
+  std::cout << "meta : " << *meta;
+  std::cout << "meta->makeSound()\n";
   meta->makeSound();
+  std::cout << "i : " << *i;
+  std::cout << "i->makeSound()\n";
+  i->makeSound();
 
   delete i;
   delete meta;
