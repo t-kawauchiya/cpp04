@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:40:30 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/18 17:09:34 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/11 13:27:57 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,15 @@ class WrongAnimal
 public:
   WrongAnimal(void);
   WrongAnimal(std::string type);
-  virtual ~WrongAnimal(void);
   WrongAnimal(const WrongAnimal& other);
+
+  virtual ~WrongAnimal(void);
+
   WrongAnimal& operator=(const WrongAnimal& other);
 
   std::string getType() const;
   void setType(const std::string type);
+
   void makeSound(void) const;
 
 protected:

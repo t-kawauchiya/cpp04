@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:40:30 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/04 22:05:40 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/11 21:18:44 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,16 @@ class Dog : public Animal
 public:
   Dog(void);
   Dog(std::string type);
-  ~Dog(void);
   Dog(const Dog& other);
+
+  ~Dog(void);
+
   Dog& operator=(const Dog& other);
-  void makeSound(void) const;
 
   Brain* getBrain(void) const;
   void setBrain(const Brain& brain);
+
+  void makeSound(void) const;
 
 private:
   static const std::string kDefaultType;

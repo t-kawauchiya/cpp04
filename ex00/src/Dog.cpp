@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:46:39 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/11 13:26:37 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/11 21:08:21 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ Dog::~Dog(void)
 Dog& Dog::operator=(const Dog& src)
 {
   std::cout << "Dog assignment constructor called.\n";
+
   if (this == &src)
     return (*this);
   Animal::operator=(src);

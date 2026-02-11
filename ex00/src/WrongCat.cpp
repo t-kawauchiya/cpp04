@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:46:39 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/11 13:31:18 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/11 21:08:40 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ WrongCat::~WrongCat(void)
 WrongCat& WrongCat::operator=(const WrongCat& src)
 {
   std::cout << "WrongCat assignment operator called.\n";
+
   if (this == &src)
     return (*this);
   WrongAnimal::operator=(src);
