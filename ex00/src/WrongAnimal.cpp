@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:46:39 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/04 21:14:53 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/11 13:29:55 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ WrongAnimal::WrongAnimal() : _type(kDefaultType)
 
 WrongAnimal::WrongAnimal(std::string type) : _type(type)
 {
-  std::cout << "WrongAnimal constructor called.\n";
+  std::cout << "WrongAnimal parameteric constructor called.\n";
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& other)
@@ -39,7 +39,9 @@ WrongAnimal::~WrongAnimal(void)
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& src)
 {
-  std::cout << "WrongAnimal copy assignment constructor called.\n";
+  std::cout << "WrongAnimal assignment operator called.\n";
+  if (this == &src)
+    return (*this);
   this->_type = src._type;
   return (*this);
 }

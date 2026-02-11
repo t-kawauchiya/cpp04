@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:46:39 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/04 21:13:56 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/11 13:26:37 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,12 @@ Dog::Dog() : Animal(kDefaultType)
 
 Dog::Dog(std::string type) : Animal(type)
 {
-  std::cout << "Dog constructor called.\n";
+  std::cout << "Dog parmeteric constructor called.\n";
 }
 
-Dog::Dog(const Dog& other)
+Dog::Dog(const Dog& other) : Animal(other)
 {
   std::cout << "Dog copy constructor called.\n";
-  *this = other;
 }
 
 Dog::~Dog(void)
@@ -39,8 +38,10 @@ Dog::~Dog(void)
 
 Dog& Dog::operator=(const Dog& src)
 {
-  std::cout << "Dog copy assignment constructor called.\n";
-  this->_type = src._type;
+  std::cout << "Dog assignment constructor called.\n";
+  if (this == &src)
+    return (*this);
+  Animal::operator=(src);
   return (*this);
 }
 

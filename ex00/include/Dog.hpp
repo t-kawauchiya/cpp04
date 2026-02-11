@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:40:30 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/04 21:11:31 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/11 13:27:32 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ public:
   Dog(void);
   Dog(std::string type);
   Dog(const Dog& other);
+
   ~Dog(void);
+
   Dog& operator=(const Dog& other);
 
   void makeSound(void) const;

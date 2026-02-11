@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:46:39 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/04 21:14:21 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/11 13:21:06 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,9 @@ Cat::Cat(std::string type) : Animal(type)
   std::cout << "Cat constructor called.\n";
 }
 
-Cat::Cat(const Cat& other)
+Cat::Cat(const Cat& other) : Animal::Animal(other)
 {
   std::cout << "Cat copy constructor called.\n";
-  *this = other;
 }
 
 Cat::~Cat(void)
@@ -39,8 +38,10 @@ Cat::~Cat(void)
 
 Cat& Cat::operator=(const Cat& src)
 {
-  std::cout << "Cat copy assignment constructor called.\n";
-  this->_type = src._type;
+  std::cout << "Cat copy assignment operator called.\n";
+  if (this == &src)
+    return (*this);
+  Animal::operator=(src);
   return (*this);
 }
 

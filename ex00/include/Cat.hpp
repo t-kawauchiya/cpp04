@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:40:30 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/04 21:11:07 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/11 13:27:20 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ public:
   Cat(void);
   Cat(std::string type);
   Cat(const Cat& other);
+
   ~Cat(void);
+
   Cat& operator=(const Cat& other);
 
   void makeSound(void) const;
