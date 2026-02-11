@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:40:30 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/04 22:16:18 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/11 22:29:48 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define _DOG_H_
 
 #include "AAnimal.hpp"
+#include "Brain.hpp"
 
 #include <string>
 
@@ -22,13 +23,20 @@ class Dog : public AAnimal
 public:
   Dog(void);
   Dog(std::string type);
-  ~Dog(void);
   Dog(const Dog& other);
+
+  ~Dog(void);
+
   Dog& operator=(const Dog& other);
+
+  Brain* getBrain(void) const;
+  void setBrain(const Brain& brain);
+
   void makeSound(void) const;
 
 private:
   static const std::string kDefaultType;
+  Brain* _brain;
 };
 
 std::ostream& operator<<(std::ostream& os, const Dog& ct);

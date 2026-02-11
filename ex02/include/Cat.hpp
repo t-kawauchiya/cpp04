@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:40:30 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/04 22:16:01 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/11 22:30:43 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define _CAT_H_
 
 #include "AAnimal.hpp"
+#include "Brain.hpp"
 
 #include <string>
 
@@ -22,14 +23,20 @@ class Cat : public AAnimal
 public:
   Cat(void);
   Cat(std::string type);
-  ~Cat(void);
   Cat(const Cat& other);
+
+  ~Cat(void);
+
   Cat& operator=(const Cat& other);
+
+  Brain* getBrain(void) const;
+  void setBrain(const Brain& brain);
 
   void makeSound(void) const;
 
 private:
   static const std::string kDefaultType;
+  Brain* _brain;
 };
 
 std::ostream& operator<<(std::ostream& os, const Cat& ct);

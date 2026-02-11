@@ -6,14 +6,12 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:40:30 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/04 22:15:22 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/11 22:28:49 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _AANIMAL_H_
 #define _AANIMAL_H_
-
-#include "Brain.hpp"
 
 #include <string>
 
@@ -26,14 +24,11 @@ public:
 
   std::string getType() const;
   void setType(const std::string type);
-  Brain* getBrain(void) const;
-  void setBrain(const Brain& brain);
 
   virtual void makeSound(void) const = 0;
 
 protected:
   std::string _type;
-  Brain* _brain;
   AAnimal(void);
   AAnimal(std::string type);
 

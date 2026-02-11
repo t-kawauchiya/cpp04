@@ -6,11 +6,12 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:46:39 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/19 13:30:54 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/11 22:58:02 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include "Brain.hpp"
 
 #include <iostream>
 
@@ -28,18 +29,10 @@ Cat::Cat(std::string type) : Animal(type)
   this->_brain = new Brain();
 }
 
-Cat::Cat(const Cat& other)
+Cat::Cat(const Cat& other) : Animal(other)
 {
   std::cout << "Cat copy constructor called.\n";
-  *this = other;
-}
-
-Cat& Cat::operator=(const Cat& src)
-{
-  std::cout << "Cat copy assignment constructor called.\n";
-  this->_type = src._type;
-  this->_brain = new Brain(*src._brain);
-  return (*this);
+  this->_brain = new Brain(*other._brain);
 }
 
 Cat::~Cat(void)
@@ -48,7 +41,17 @@ Cat::~Cat(void)
   delete this->_brain;
 }
 
-const Brain* Cat::getBrain(void) const
+Cat& Cat::operator=(const Cat& src)
+{
+  std::cout << "Cat assignment operator called.\n";
+  if (this == &src)
+    return (*this);
+  Animal::operator=(src);
+  this->_brain = new Brain(*src._brain);
+  return (*this);
+}
+
+Brain* Cat::getBrain(void) const
 {
   return this->_brain;
 }

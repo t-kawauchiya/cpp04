@@ -4,9 +4,8 @@
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/15 12:46:39 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/11 21:08:21 by takawauc         ###   ########.fr       */
+/*                                                +#+#+#+#+#+   +#+           */ /*   Created: 2025/12/15 12:46:39 by takawauc          #+#    #+#             */
+/*   Updated: 2026/02/11 21:40:25 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +37,7 @@ Dog::~Dog(void)
 
 Dog& Dog::operator=(const Dog& src)
 {
-  std::cout << "Dog assignment constructor called.\n";
+  std::cout << "Dog copy assignment operator called.\n";
 
   if (this == &src)
     return (*this);
@@ -51,8 +50,8 @@ void Dog::makeSound(void) const
   std::cout << "Wouaf wouaf\n";
 }
 
-std::ostream& operator<<(std::ostream& os, const Dog& ct)
+std::ostream& operator<<(std::ostream& os, const Dog& dog)
 {
-  os << "type : " << ct.getType() << "\n";
+  os << "type : " << dog.getType() << "\n";
   return os;
 }

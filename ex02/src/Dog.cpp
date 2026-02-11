@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:46:39 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/04 22:18:08 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/11 22:53:37 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,28 +26,40 @@ Dog::Dog() : AAnimal(kDefaultType)
 
 Dog::Dog(std::string type) : AAnimal(type)
 {
-  std::cout << "Dog constructor called.\n";
+  std::cout << "Dog parameteric constructor called.\n";
   this->_brain = new Brain();
 }
 
-Dog::Dog(const Dog& other)
+Dog::Dog(const Dog& other) : AAnimal(other)
 {
   std::cout << "Dog copy constructor called.\n";
-  *this = other;
-}
-
-Dog& Dog::operator=(const Dog& src)
-{
-  std::cout << "Dog copy assignment constructor called.\n";
-  this->_type = src._type;
-  this->_brain = new Brain(*src._brain);
-  return (*this);
+  this->_brain = new Brain(*other._brain);
 }
 
 Dog::~Dog(void)
 {
   std::cout << "Dog destructor called.\n";
   delete this->_brain;
+}
+
+Dog& Dog::operator=(const Dog& src)
+{
+  std::cout << "Dog copy assignment operator called.\n";
+  if (this == &src)
+    return (*this);
+  AAnimal::operator=(src);
+  this->_brain = new Brain(*src._brain);
+  return (*this);
+}
+
+Brain* Dog::getBrain(void) const
+{
+  return this->_brain;
+}
+
+void Dog::setBrain(const Brain& brain)
+{
+  *this->_brain = brain;
 }
 
 void Dog::makeSound(void) const
@@ -58,6 +70,6 @@ void Dog::makeSound(void) const
 std::ostream& operator<<(std::ostream& os, const Dog& dog)
 {
   os << "type : " << dog.getType() << "\n";
-  os << "Brain : \n" << *dog.getBrain();
+  os << "Brain : " << *dog.getBrain();
   return os;
 }
