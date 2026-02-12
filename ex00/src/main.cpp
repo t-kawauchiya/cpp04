@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 13:15:27 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/11 13:55:15 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/12 19:26:01 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,31 +51,31 @@ int right()
     delete j;
     std::cout << separator;
   }
-  {
-    std::cout << "[setter/getter/copy constructor/destructer]\n";
-    Animal animal1;
-    Animal animal2(animal1);
-    Dog dog1;
-    Dog dog2(dog1);
-    Cat cat1;
-    Cat cat2(cat1);
-
-    std::cout << "animal1.getType(): " << animal1.getType() << "\n";
-    std::cout << "animal1.setType(\"animal1\")" << "\n";
-    animal1.setType("animal1");
-    std::cout << "animal1.getType(): " << animal1.getType() << "\n";
-
-    std::cout << "dog1.getType(): " << dog1.getType() << "\n";
-    std::cout << "dog1.setType(\"dog1\")" << "\n";
-    dog1.setType("dog1");
-    std::cout << "dog1.getType(): " << dog1.getType() << "\n";
-
-    std::cout << "cat1.getType(): " << cat1.getType() << "\n";
-    std::cout << "cat1.setType(\"cat1\")" << "\n";
-    cat1.setType("cat1");
-    std::cout << "cat1.getType(): " << cat1.getType() << "\n";
-  }
-  std::cout << separator;
+  // {
+  //   std::cout << "[setter/getter/copy constructor/destructer]\n";
+  //   Animal animal1;
+  //   Animal animal2(animal1);
+  //   Dog dog1;
+  //   Dog dog2(dog1);
+  //   Cat cat1;
+  //   Cat cat2(cat1);
+  //
+  //   std::cout << "animal1.getType(): " << animal1.getType() << "\n";
+  //   std::cout << "animal1.setType(\"animal1\")" << "\n";
+  //   animal1.setType("animal1");
+  //   std::cout << "animal1.getType(): " << animal1.getType() << "\n";
+  //
+  //   std::cout << "dog1.getType(): " << dog1.getType() << "\n";
+  //   std::cout << "dog1.setType(\"dog1\")" << "\n";
+  //   dog1.setType("dog1");
+  //   std::cout << "dog1.getType(): " << dog1.getType() << "\n";
+  //
+  //   std::cout << "cat1.getType(): " << cat1.getType() << "\n";
+  //   std::cout << "cat1.setType(\"cat1\")" << "\n";
+  //   cat1.setType("cat1");
+  //   std::cout << "cat1.getType(): " << cat1.getType() << "\n";
+  // std::cout << separator;
+  // }
   return 0;
 }
 

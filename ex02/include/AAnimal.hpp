@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:40:30 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/11 22:28:49 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/12 19:38:05 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,12 @@
 class AAnimal
 {
 public:
+  AAnimal(void);
+  AAnimal(std::string type);
   AAnimal(const AAnimal& other);
+
   virtual ~AAnimal(void);
+
   AAnimal& operator=(const AAnimal& other);
 
   std::string getType() const;
@@ -29,8 +33,6 @@ public:
 
 protected:
   std::string _type;
-  AAnimal(void);
-  AAnimal(std::string type);
 
 private:
   static const std::string kDefaultType;

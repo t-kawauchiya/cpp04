@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:46:39 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/04 22:17:33 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/12 19:30:03 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,6 @@ std::string AAnimal::getType() const
 void AAnimal::setType(const std::string type)
 {
   this->_type = type;
-}
-
-Brain* AAnimal::getBrain(void) const
-{
-  return this->_brain;
-}
-
-void AAnimal::setBrain(const Brain& brain)
-{
-  *this->_brain = brain;
 }
 
 std::ostream& operator<<(std::ostream& os, const AAnimal& ct)
